@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DARUL HIKMA INTERNATIONAL COLLEGE – Excellence in Education</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #0A2463;
+  --blue-mid: #1B4FD8;
+  --blue-light: #3A7BD5;
+  --gold: #C9A84C;
+  --gold-light: #F0D080;
+  --white: #FFFFFF;
+  --off-white: #F8F6F0;
+  --gray: #6B7280;
+  --gray-light: #F3F4F6;
+  --text: #111827;
+  --card-bg: #FFFFFF;
+  --nav-bg: #FFFFFF;
+  --footer-bg: #0A2463;
+  --shadow: 0 4px 24px rgba(10,36,99,0.10);
+  --radius: 14px;
+  --transition: 0.3s cubic-bezier(.4,0,.2,1);
+}
+[data-theme="dark"] {
+  --off-white: #111827;
+  --gray-light: #1F2937;
+  --text: #F9FAFB;
+  --card-bg: #1F2937;
+  --nav-bg: #111827;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text);transition:background var(--transition),color var(--transition);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nav-bg);box-shadow:var(--shadow);transition:background var(--transition)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{width:44px;height:44px;background:linear-gradient(135deg,var(--blue),var(--blue-light));border-radius:10px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0}
+.logo-mark::after{content:'DHIC';color:#fff;font-family:'Playfair Display',serif;font-weight:900;font-size:13px;letter-spacing:1px}
+.logo-text{display:flex;flex-direction:column;line-height:1.1}
+.logo-text strong{font-family:'Playfair Display',serif;font-size:16px;color:var(--blue);font-weight:700}
+.logo-text span{font-size:11px;color:var(--gold);font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{padding:8px 14px;border-radius:8px;text-decoration:none;color:var(--text);font-size:14px;font-weight:500;transition:all var(--transition)}
+.nav-links a:hover,.nav-links a.active{background:var(--gray-light);color:var(--blue)}
+.nav-links .btn-apply{background:linear-gradient(135deg,var(--blue),var(--blue-light));color:#fff!important;padding:8px 20px!important;font-weight:600}
+.nav-links .btn-apply:hover{opacity:.9;transform:translateY(-1px)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.theme-toggle{width:36px;height:36px;border:none;border-radius:8px;background:var(--gray-light);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background var(--transition)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all var(--transition)}
+.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:var(--nav-bg);border-top:1px solid var(--gray-light);padding:16px;z-index:999;flex-direction:column;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:12px 16px;border-radius:8px;text-decoration:none;color:var(--text);font-weight:500;font-size:15px;transition:background var(--transition)}
+.mobile-menu a:hover{background:var(--gray-light)}
+
+/* ── SECTIONS ── */
+section{scroll-margin-top:70px}
+.section{padding:80px 24px;max-width:1200px;margin:0 auto}
+.section-sm{padding:56px 24px;max-width:1200px;margin:0 auto}
+.section-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:700;color:var(--blue);line-height:1.15;margin-bottom:16px}
+[data-theme="dark"] .section-title{color:var(--gold-light)}
+.section-sub{font-size:16px;color:var(--gray);line-height:1.7;max-width:600px}
+.divider{width:60px;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:2px;margin:16px 0 32px}
+
+/* ── HERO ── */
+#home{padding:0}
+.hero{min-height:100vh;background:linear-gradient(135deg,#0A2463 0%,#1B4FD8 60%,#3A7BD5 100%);position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;opacity:.08}
+.hero-bg svg{width:100%;height:100%}
+.hero-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,.03) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,.03) 60px)}
+.hero-content{max-width:1200px;margin:0 auto;padding:120px 24px 80px;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:6px 16px;font-size:13px;color:#fff;font-weight:600;margin-bottom:24px;animation:fadeUp .6s .1s both}
+.hero-badge::before{content:'★';color:var(--gold)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,62px);color:#fff;font-weight:900;line-height:1.08;margin-bottom:20px;animation:fadeUp .6s .2s both}
+.hero h1 em{font-style:normal;color:var(--gold-light)}
+.hero p{font-size:17px;color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:36px;max-width:480px;animation:fadeUp .6s .3s both}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;animation:fadeUp .6s .4s both}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:all var(--transition)}
+.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.4)}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-blue{background:linear-gradient(135deg,var(--blue),var(--blue-light));color:#fff}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,36,99,.3)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;animation:fadeUp .6s .5s both}
+.stat-card{background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:20px;text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--gold-light)}
+.stat-label{font-size:12px;color:rgba(255,255,255,.7);margin-top:4px;font-weight:500}
+.hero-visual{animation:fadeUp .6s .3s both}
+.hero-card-stack{position:relative;height:420px}
+.hero-main-card{background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:32px;position:absolute;top:0;right:0;left:40px;bottom:40px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero-main-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.15),transparent);border-radius:20px}
+.hero-card-bg{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,36,99,.8));border-radius:20px}
+.hero-school-img{position:absolute;inset:0;border-radius:20px;background:linear-gradient(135deg,#1B4FD8,#0A2463);display:flex;align-items:center;justify-content:center;font-size:80px;opacity:.3}
+.hero-card-content{position:relative;z-index:2}
+.hero-card-content h3{font-family:'Playfair Display',serif;color:#fff;font-size:22px;font-weight:700;margin-bottom:8px}
+.hero-card-content p{color:rgba(255,255,255,.8);font-size:14px}
+.floating-badge{position:absolute;background:#fff;border-radius:12px;padding:12px 16px;box-shadow:0 8px 32px rgba(0,0,0,.2);display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--blue);animation:float 3s ease-in-out infinite}
+.floating-badge.f1{top:20px;right:-10px;animation-delay:0s}
+.floating-badge.f2{bottom:60px;left:-20px;animation-delay:1.5s}
+.floating-badge .dot{width:8px;height:8px;border-radius:50%}
+.dot-green{background:#10B981}
+.dot-gold{background:var(--gold)}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-img-wrap{position:relative}
+.about-img{width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,var(--blue),var(--blue-light));border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:64px;overflow:hidden;position:relative}
+.about-img::after{content:'🏫';font-size:80px;opacity:.4}
+.about-accent{position:absolute;bottom:-20px;right:-20px;width:120px;height:120px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index:2;box-shadow:0 8px 32px rgba(201,168,76,.3)}
+.about-accent strong{font-family:'Playfair Display',serif;font-size:28px;color:var(--blue);font-weight:900}
+.about-accent span{font-size:11px;color:var(--blue);font-weight:600;text-align:center;line-height:1.3}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.value-item{display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--gray-light);border-radius:10px}
+.value-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--blue),var(--blue-light));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.value-item h4{font-size:14px;font-weight:600;color:var(--blue);margin-bottom:4px}
+.value-item p{font-size:12px;color:var(--gray);line-height:1.5}
+[data-theme="dark"] .value-item h4{color:var(--gold-light)}
+
+/* ── CARDS ── */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.card{background:var(--card-bg);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:all var(--transition)}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(10,36,99,.15)}
+.card-header{height:180px;display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden}
+.card-body{padding:24px}
+.card-body h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--blue);margin-bottom:8px}
+[data-theme="dark"] .card-body h3{color:var(--gold-light)}
+.card-body p{font-size:14px;color:var(--gray);line-height:1.6}
+.card-tag{display:inline-block;background:linear-gradient(135deg,var(--blue),var(--blue-light));color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:6px;margin-bottom:12px;text-transform:uppercase}
+
+/* ── STAFF ── */
+.staff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px}
+.staff-card{background:var(--card-bg);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);text-align:center;transition:all var(--transition)}
+.staff-card:hover{transform:translateY(-4px)}
+.staff-avatar{width:100%;height:220px;background:linear-gradient(135deg,var(--blue) 0%,var(--blue-light) 100%);display:flex;align-items:center;justify-content:center;font-size:64px;position:relative}
+.staff-avatar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(transparent,rgba(10,36,99,.4))}
+.staff-info{padding:20px}
+.staff-info h4{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--blue);margin-bottom:4px}
+[data-theme="dark"] .staff-info h4{color:var(--gold-light)}
+.staff-info p{font-size:13px;color:var(--gold);font-weight:600;margin-bottom:8px}
+.staff-info span{font-size:12px;color:var(--gray)}
+
+/* ── ADMISSIONS ── */
+.admissions-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
+.steps-list{display:flex;flex-direction:column;gap:16px}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step-num{width:40px;height:40px;background:linear-gradient(135deg,var(--blue),var(--blue-light));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;flex-shrink:0}
+.step-body h4{font-size:15px;font-weight:600;color:var(--blue);margin-bottom:4px}
+[data-theme="dark"] .step-body h4{color:var(--gold-light)}
+.step-body p{font-size:14px;color:var(--gray);line-height:1.6}
+.form-card{background:var(--card-bg);border-radius:var(--radius);padding:36px;box-shadow:var(--shadow)}
+.form-card h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--blue);margin-bottom:24px;font-weight:700}
+[data-theme="dark"] .form-card h3{color:var(--gold-light)}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1.5px solid var(--gray-light);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text);transition:border-color var(--transition);outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue-light)}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* ── GALLERY ── */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:12px}
+.gallery-item{border-radius:10px;overflow:hidden;cursor:pointer;position:relative;background:linear-gradient(135deg,var(--blue),var(--blue-light));display:flex;align-items:center;justify-content:center;font-size:36px;transition:all var(--transition)}
+.gallery-item:hover{transform:scale(1.02)}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-item.wide{grid-column:span 2}
+.gallery-item.tall{grid-row:span 2}
+.gallery-overlay{position:absolute;inset:0;background:rgba(10,36,99,.7);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--transition)}
+.gallery-overlay span{color:#fff;font-size:13px;font-weight:600}
+
+/* ── NEWS ── */
+.news-grid{display:grid;grid-template-columns:2fr 1fr;gap:32px}
+.news-main .card-header{height:240px}
+.news-sidebar{display:flex;flex-direction:column;gap:16px}
+.news-mini{display:flex;gap:16px;align-items:flex-start;background:var(--card-bg);border-radius:10px;padding:16px;box-shadow:var(--shadow);transition:all var(--transition)}
+.news-mini:hover{transform:translateX(4px)}
+.news-mini-img{width:64px;height:64px;border-radius:8px;background:linear-gradient(135deg,var(--blue),var(--blue-light));display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.news-mini h4{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.4}
+.news-mini span{font-size:12px;color:var(--gray)}
+.news-date{font-size:12px;color:var(--gold);font-weight:600;margin-bottom:6px}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-item{display:flex;gap:16px;align-items:flex-start}
+.contact-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--blue),var(--blue-light));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.contact-item h4{font-size:15px;font-weight:600;color:var(--blue);margin-bottom:4px}
+[data-theme="dark"] .contact-item h4{color:var(--gold-light)}
+.contact-item p{font-size:14px;color:var(--gray);line-height:1.5}
+.map-placeholder{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-light) 100%);border-radius:16px;height:200px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:600;margin-top:16px;opacity:.8;position:relative;overflow:hidden}
+.map-placeholder::before{content:'🗺️';font-size:48px;position:absolute;opacity:.3}
+.social-links{display:flex;gap:12px;margin-top:8px}
+.social-btn{width:40px;height:40px;border-radius:10px;background:var(--gray-light);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px;transition:all var(--transition)}
+.social-btn:hover{background:var(--blue);transform:translateY(-2px)}
+
+/* ── PORTAL ── */
+.portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.portal-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.portal-feature{background:var(--gray-light);border-radius:10px;padding:20px;display:flex;align-items:flex-start;gap:12px}
+.portal-icon{font-size:24px}
+.portal-feature h4{font-size:14px;font-weight:600;color:var(--blue);margin-bottom:4px}
+[data-theme="dark"] .portal-feature h4{color:var(--gold-light)}
+.portal-feature p{font-size:12px;color:var(--gray)}
+
+/* ── ACADEMICS ── */
+.subjects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.subject-pill{background:var(--card-bg);border:1.5px solid var(--gray-light);border-radius:10px;padding:16px;text-align:center;font-size:13px;font-weight:600;color:var(--blue);transition:all var(--transition);cursor:default}
+.subject-pill:hover{border-color:var(--blue-light);background:var(--blue);color:#fff;transform:translateY(-2px)}
+[data-theme="dark"] .subject-pill{color:var(--gold-light)}
+[data-theme="dark"] .subject-pill:hover{color:#fff}
+.subject-pill .subject-icon{font-size:24px;display:block;margin-bottom:8px}
+.calendar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.cal-term{background:var(--card-bg);border-radius:10px;padding:20px;box-shadow:var(--shadow);border-left:4px solid var(--blue-light)}
+.cal-term:nth-child(2){border-left-color:var(--gold)}
+.cal-term:nth-child(3){border-left-color:#10B981}
+.cal-term h4{font-size:14px;font-weight:700;color:var(--blue);margin-bottom:8px}
+[data-theme="dark"] .cal-term h4{color:var(--gold-light)}
+.cal-term p{font-size:13px;color:var(--gray);line-height:1.6}
+
+/* ── PRINCIPAL ── */
+.principal-card{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-light) 100%);border-radius:20px;padding:40px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;color:#fff;margin-top:32px}
+.principal-photo{width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.2);border:4px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:48px;flex-shrink:0}
+.principal-card blockquote{font-size:16px;line-height:1.7;font-style:italic;opacity:.9;margin-bottom:16px}
+.principal-card cite{font-size:14px;font-weight:700;color:var(--gold-light)}
+
+/* ── FOOTER ── */
+footer{background:var(--footer-bg);color:rgba(255,255,255,.8);padding:64px 24px 32px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand .logo-text strong{color:#fff}
+.footer-brand .logo-text span{color:var(--gold)}
+.footer-brand p{font-size:14px;line-height:1.7;margin-top:16px;opacity:.7}
+.footer-col h4{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul a{color:rgba(255,255,255,.7);text-decoration:none;font-size:14px;transition:color var(--transition)}
+.footer-col ul a:hover{color:var(--gold-light)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;gap:12px}
+.footer-bottom p{font-size:13px;opacity:.6}
+
+/* ── HERO SECTION BG ── */
+.section-wave{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-light) 100%);padding:64px 24px;margin:0}
+.section-wave .section-title{color:#fff}
+.section-wave .section-sub{color:rgba(255,255,255,.8)}
+.section-wave .section-label{color:var(--gold-light)}
+.section-wave .divider{background:linear-gradient(90deg,var(--gold-light),rgba(255,255,255,.3))}
+
+/* ── NOTICE BANNER ── */
+.notice-bar{background:linear-gradient(90deg,var(--gold),var(--gold-light));padding:10px 24px;text-align:center;font-size:13px;font-weight:600;color:var(--blue);position:relative;overflow:hidden;top:70px}
+.notice-bar::before{content:'📢 '}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.fade-in.visible{opacity:1;transform:none}
+
+/* ── TABS ── */
+.tabs{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
+.tab{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:2px solid var(--gray-light);background:transparent;color:var(--gray);transition:all var(--transition)}
+.tab.active{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* ── ACHIEVEMENTS ── */
+.achievements-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+.achievement{background:var(--card-bg);border-radius:12px;padding:24px;text-align:center;box-shadow:var(--shadow)}
+.achievement-icon{font-size:32px;margin-bottom:12px}
+.achievement h4{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--blue);margin-bottom:4px}
+[data-theme="dark"] .achievement h4{color:var(--gold-light)}
+.achievement p{font-size:13px;color:var(--gray)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-content,.about-grid,.contact-grid,.portal-grid,.admissions-layout,.news-grid,.footer-grid{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .hero-stats{grid-template-columns:repeat(3,1fr)}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .achievements-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .principal-card{grid-template-columns:1fr;text-align:center}
+}
+@media(max-width:500px){
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .gallery-item.wide{grid-column:span 1}
+  .calendar-grid{grid-template-columns:1fr}
+  .portal-features,.values-grid,.form-row{grid-template-columns:1fr}
+  .achievements-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- NOTICE BAR -->
+<div class="notice-bar">Admission for 2025/2026 Academic Session is now OPEN! Apply before June 30, 2026.</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#home">
+      <div class="logo-mark"></div>
+      <div class="logo-text">
+        <strong>DARUL HIKMA INTERNATIONAL COLLEGE</strong>
+        <span>Knowledge · Faith · Excellence</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#staff">Staff</a></li>
+      <li><a href="#admissions">Admissions</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#portal" class="btn-apply btn">Student Portal</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">🌙</button>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMenu()">🏠 Home</a>
+  <a href="#about" onclick="closeMenu()">🏛️ About Us</a>
+  <a href="#academics" onclick="closeMenu()">📚 Academics</a>
+  <a href="#staff" onclick="closeMenu()">👥 Staff</a>
+  <a href="#admissions" onclick="closeMenu()">📋 Admissions</a>
+  <a href="#gallery" onclick="closeMenu()">🖼️ Gallery</a>
+  <a href="#news" onclick="closeMenu()">📰 News & Events</a>
+  <a href="#contact" onclick="closeMenu()">📞 Contact</a>
+  <a href="#portal" onclick="closeMenu()" style="background:var(--blue);color:#fff;font-weight:700">🎓 Student Portal</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <div>
+        <div class="hero-badge">A Premier Islamic International College in Zamfara State</div>
+        <h1>Shaping <em>Future</em> Leaders of Nigeria</h1>
+        <p>DARUL HIKMA INTERNATIONAL COLLEGE provides world-class education rooted in Nigerian values. We nurture academic excellence, character, and lifelong curiosity in every student.</p>
+        <div class="hero-btns">
+          <a href="#admissions" class="btn btn-primary">Apply Now →</a>
+          <a href="#about" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-num">2,400+</div>
+            <div class="stat-label">Students Enrolled</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">98%</div>
+            <div class="stat-label">WAEC Pass Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">35+</div>
+            <div class="stat-label">Years of Excellence</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+          <div class="hero-main-card">
+            <div class="hero-school-img">🏫</div>
+            <div class="hero-card-bg"></div>
+            <div class="hero-card-content">
+              <h3>A Campus Built for Excellence</h3>
+              <p>Modern laboratories · Smart classrooms · Sports complex</p>
+            </div>
+          </div>
+          <div class="floating-badge f1">
+            <div class="dot dot-green"></div>
+            <span>48 Teachers Online</span>
+          </div>
+          <div class="floating-badge f2">
+            <div class="dot dot-gold"></div>
+            <span>Exam Results Out</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--off-white)">
+  <div class="section fade-in">
+    <div class="about-grid">
+      <div>
+        <div class="about-img-wrap">
+          <div class="about-img"></div>
+          <div class="about-accent">
+            <strong>1989</strong>
+            <span>Year Founded</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">About Our School</div>
+        <h2 class="section-title">A Legacy of Academic Excellence</h2>
+        <div class="divider"></div>
+        <p style="color:var(--gray);line-height:1.8;margin-bottom:20px">Founded in Tsafe, Zamfara State, Darul Hikma International College has grown from a modest secondary school into one of the most respected educational institutions in North-West Nigeria. Our commitment to holistic education — combining academic rigour with moral development — has produced thousands of successful graduates serving Nigeria and beyond.</p>
+        <p style="color:var(--gray);line-height:1.8;margin-bottom:28px"><strong style="color:var(--blue)">Mission:</strong> To provide quality, inclusive education that equips students with knowledge, skills, and values for sustainable development. <br><br><strong style="color:var(--blue)">Vision:</strong> To be the leading secondary school in Nigeria, producing confident, compassionate, and competent graduates.</p>
+        <div class="values-grid">
+          <div class="value-item"><div class="value-icon">🎯</div><div><h4>Excellence</h4><p>Striving for the highest standards in all endeavours</p></div></div>
+          <div class="value-item"><div class="value-icon">🤝</div><div><h4>Integrity</h4><p>Upholding honesty, ethics and transparency</p></div></div>
+          <div class="value-item"><div class="value-icon">💡</div><div><h4>Innovation</h4><p>Embracing creativity and modern learning methods</p></div></div>
+          <div class="value-item"><div class="value-icon">🌍</div><div><h4>Community</h4><p>Building leaders who serve their communities</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Principal's Message -->
+    <div class="principal-card fade-in" style="margin-top:56px">
+      <div class="principal-photo">👨‍💼</div>
+      <div>
+        <blockquote>"At DARUL HIKMA INTERNATIONAL COLLEGE, we believe every child carries within them an extraordinary potential. Our role is not merely to teach — it is to inspire, to challenge, and to equip our students with the tools they need to transform their communities and our nation. We are proud of our graduates and remain committed to raising the next generation of Nigerian leaders."</blockquote>
+        <cite>— Dr. Abubakar Musa Ibrahim, Principal</cite>
+      </div>
+    </div>
+
+    <!-- Achievements -->
+    <div style="margin-top:56px">
+      <div class="section-label">Our Record</div>
+      <h3 class="section-title" style="font-size:28px">School Achievements</h3>
+      <div class="divider"></div>
+      <div class="achievements-grid">
+        <div class="achievement"><div class="achievement-icon">🏆</div><h4>Best School</h4><p>Zamfara State Award 2023</p></div>
+        <div class="achievement"><div class="achievement-icon">📊</div><h4>98% WAEC</h4><p>Pass Rate 2024 Session</p></div>
+        <div class="achievement"><div class="achievement-icon">🎓</div><h4>15,000+</h4><p>Alumni Across Nigeria</p></div>
+        <div class="achievement"><div class="achievement-icon">⚽</div><h4>State Champions</h4><p>Football & Athletics 2023</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMICS -->
+<section id="academics">
+  <div class="section fade-in">
+    <div class="section-label">Curriculum</div>
+    <h2 class="section-title">Academic Programmes</h2>
+    <div class="divider"></div>
+    <p class="section-sub" style="margin-bottom:40px">We offer a comprehensive curriculum aligned with the Nigerian Educational Research and Development Council (NERDC) standards, preparing students for WAEC, NECO, and JAMB examinations.</p>
+
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('sciences')">Sciences</button>
+      <button class="tab" onclick="showTab('arts')">Arts & Humanities</button>
+      <button class="tab" onclick="showTab('commercial')">Commercial</button>
+      <button class="tab" onclick="showTab('junior')">Junior Secondary</button>
+    </div>
+
+    <div id="tab-sciences" class="subjects-grid">
+      <div class="subject-pill"><span class="subject-icon">🧪</span>Chemistry</div>
+      <div class="subject-pill"><span class="subject-icon">⚡</span>Physics</div>
+      <div class="subject-pill"><span class="subject-icon">🧬</span>Biology</div>
+      <div class="subject-pill"><span class="subject-icon">➗</span>Mathematics</div>
+      <div class="subject-pill"><span class="subject-icon">💻</span>Computer Sci.</div>
+      <div class="subject-pill"><span class="subject-icon">🌍</span>Geography</div>
+      <div class="subject-pill"><span class="subject-icon">🔬</span>Further Maths</div>
+      <div class="subject-pill"><span class="subject-icon">📐</span>Technical Drawing</div>
+    </div>
+    <div id="tab-arts" class="subjects-grid" style="display:none">
+      <div class="subject-pill"><span class="subject-icon">📖</span>Literature in English</div>
+      <div class="subject-pill"><span class="subject-icon">🕌</span>Islamic Studies</div>
+      <div class="subject-pill"><span class="subject-icon">🌍</span>History</div>
+      <div class="subject-pill"><span class="subject-icon">🎨</span>Fine Arts</div>
+      <div class="subject-pill"><span class="subject-icon">🗣️</span>Hausa Language</div>
+      <div class="subject-pill"><span class="subject-icon">📜</span>Government</div>
+      <div class="subject-pill"><span class="subject-icon">🎭</span>Drama</div>
+      <div class="subject-pill"><span class="subject-icon">🧘</span>CRS / IRS</div>
+    </div>
+    <div id="tab-commercial" class="subjects-grid" style="display:none">
+      <div class="subject-pill"><span class="subject-icon">📊</span>Accounting</div>
+      <div class="subject-pill"><span class="subject-icon">🏢</span>Commerce</div>
+      <div class="subject-pill"><span class="subject-icon">📈</span>Economics</div>
+      <div class="subject-pill"><span class="subject-icon">📝</span>Office Practice</div>
+      <div class="subject-pill"><span class="subject-icon">💰</span>Business Studies</div>
+      <div class="subject-pill"><span class="subject-icon">🖥️</span>Data Processing</div>
+    </div>
+    <div id="tab-junior" class="subjects-grid" style="display:none">
+      <div class="subject-pill"><span class="subject-icon">📚</span>English Language</div>
+      <div class="subject-pill"><span class="subject-icon">➕</span>Mathematics</div>
+      <div class="subject-pill"><span class="subject-icon">🔭</span>Basic Science</div>
+      <div class="subject-pill"><span class="subject-icon">🛠️</span>Basic Technology</div>
+      <div class="subject-pill"><span class="subject-icon">🎵</span>Music</div>
+      <div class="subject-pill"><span class="subject-icon">🌱</span>Agric. Science</div>
+      <div class="subject-pill"><span class="subject-icon">🏃</span>Physical Education</div>
+      <div class="subject-pill"><span class="subject-icon">💻</span>Computer Studies</div>
+    </div>
+
+    <div style="margin-top:48px">
+      <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--blue);margin-bottom:8px">Academic Calendar 2025/2026</h3>
+      <div class="divider"></div>
+      <div class="calendar-grid">
+        <div class="cal-term"><h4>First Term</h4><p>📅 Sept 15, 2025 – Dec 19, 2025<br>Mid-term: Oct 27–Nov 3<br>Exams: Dec 8–19</p></div>
+        <div class="cal-term"><h4>Second Term</h4><p>📅 Jan 12, 2026 – Apr 3, 2026<br>Mid-term: Feb 23–Mar 2<br>Exams: Mar 23–Apr 3</p></div>
+        <div class="cal-term"><h4>Third Term</h4><p>📅 Apr 20, 2026 – Jul 10, 2026<br>WAEC/NECO: May–Jun<br>Promotion Exams: Jun 29</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAFF -->
+<section id="staff" style="background:var(--gray-light)">
+  <div class="section fade-in">
+    <div class="section-label">Our Team</div>
+    <h2 class="section-title">Teachers & Staff</h2>
+    <div class="divider"></div>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-avatar" style="font-size:52px">👨‍💼</div>
+        <div class="staff-info"><h4>Dr. Abubakar M. Ibrahim</h4><p>Principal</p><span>PhD Education Management, BUK</span></div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar" style="background:linear-gradient(135deg,#1E8449,#27AE60)">👩‍🏫</div>
+        <div class="staff-info"><h4>Mrs. Fatima Abdullahi</h4><p>Vice Principal (Academics)</p><span>M.Ed Mathematics, ABU Zaria</span></div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar" style="background:linear-gradient(135deg,#7D3C98,#9B59B6)">👨‍🔬</div>
+        <div class="staff-info"><h4>Mr. Sani Hassan Umar</h4><p>Head of Sciences</p><span>B.Sc Chemistry, UDUSOK</span></div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar" style="background:linear-gradient(135deg,#C0392B,#E74C3C)">👩‍💻</div>
+        <div class="staff-info"><h4>Miss Zainab Yusuf</h4><p>Computer Science Teacher</p><span>B.Sc Computer Science, FUDMA</span></div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar" style="background:linear-gradient(135deg,#D68910,#F39C12)">👨‍📚</div>
+        <div class="staff-info"><h4>Alhaji Musa Bello</h4><p>Head of Arts</p><span>B.A. Islamic Studies, BUK</span></div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar" style="background:linear-gradient(135deg,#117A65,#1ABC9C)">👩‍⚕️</div>
+        <div class="staff-info"><h4>Mrs. Amina Garba</h4><p>School Counsellor</p><span>M.Ed Guidance & Counselling, ABU</span></div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar" style="background:linear-gradient(135deg,#1A5276,#2980B9)">👨‍🎨</div>
+        <div class="staff-info"><h4>Mr. Ibrahim Shehu</h4><p>Physical Education</p><span>B.Ed Physical Education, ATBU</span></div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar" style="background:linear-gradient(135deg,#2C3E50,#566573)">👩‍🔬</div>
+        <div class="staff-info"><h4>Mrs. Hauwa Aliyu</h4><p>Biology Teacher</p><span>B.Sc Biology, Gusau Polytechnic</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS -->
+<section id="admissions">
+  <div class="section fade-in">
+    <div class="section-label">Join Our Family</div>
+    <h2 class="section-title">Admissions 2025/2026</h2>
+    <div class="divider"></div>
+    <div class="admissions-layout">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--blue);margin-bottom:8px">How to Apply</h3>
+        <p style="color:var(--gray);font-size:14px;margin-bottom:24px">Follow these simple steps to secure your child's place at DARUL HIKMA INTERNATIONAL COLLEGE.</p>
+        <div class="steps-list">
+          <div class="step"><div class="step-num">1</div><div class="step-body"><h4>Download or Collect Form</h4><p>Pick up the application form from our school office or download it from the portal. Form fee: ₦2,000</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body"><h4>Complete the Application</h4><p>Fill in all sections carefully including academic records, passport photo, and guardian information.</p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-body"><h4>Entrance Examination</h4><p>All applicants sit a computer-based entrance exam covering English, Mathematics, and General Knowledge.</p></div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-body"><h4>Interview & Offer</h4><p>Shortlisted candidates are called for an oral interview. Successful applicants receive admission letters within 2 weeks.</p></div></div>
+          <div class="step"><div class="step-num">5</div><div class="step-body"><h4>Enrolment & Payment</h4><p>Complete enrolment by paying the first-term school fees and collecting your student ID and timetable.</p></div></div>
+        </div>
+        <div style="margin-top:32px;padding:20px;background:linear-gradient(135deg,var(--blue),var(--blue-light));border-radius:12px;color:#fff">
+          <h4 style="font-size:15px;font-weight:700;margin-bottom:12px">📋 School Fees (Per Term)</h4>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px">
+            <span>JS1 – JS3: <strong>₦45,000</strong></span>
+            <span>SS1 – SS3: <strong>₦55,000</strong></span>
+            <span>Science Class Extra: <strong>₦8,000</strong></span>
+            <span>Boarding (Optional): <strong>₦35,000</strong></span>
+          </div>
+          <p style="font-size:12px;margin-top:12px;opacity:.8">* Fees are subject to review. Scholarships available for top-performing students.</p>
+        </div>
+        <a href="#" class="btn btn-blue" style="margin-top:16px;display:inline-flex">⬇ Download Admission Form</a>
+      </div>
+      <div class="form-card">
+        <h3>Online Application Form</h3>
+        <div class="form-row">
+          <div class="form-group"><label>First Name *</label><input type="text" placeholder="e.g. Amina"></div>
+          <div class="form-group"><label>Last Name *</label><input type="text" placeholder="e.g. Abdullahi"></div>
+        </div>
+        <div class="form-group"><label>Date of Birth *</label><input type="date"></div>
+        <div class="form-group"><label>Class Applying For *</label>
+          <select><option value="">Select class</option><option>JSS 1</option><option>JSS 2</option><option>JSS 3</option><option>SS 1</option><option>SS 2</option><option>SS 3</option></select>
+        </div>
+        <div class="form-group"><label>Parent / Guardian Name *</label><input type="text" placeholder="Full name"></div>
+        <div class="form-row">
+          <div class="form-group"><label>Phone Number *</label><input type="tel" placeholder="08012345678"></div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="email@example.com"></div>
+        </div>
+        <div class="form-group"><label>Home Address</label><textarea placeholder="Full residential address"></textarea></div>
+        <div class="form-group"><label>Previous School</label><input type="text" placeholder="Name of last school attended"></div>
+        <button class="btn btn-blue" style="width:100%;justify-content:center;margin-top:8px" onclick="submitForm()">Submit Application →</button>
+        <p style="font-size:12px;color:var(--gray);text-align:center;margin-top:12px">By submitting, you agree to our admission terms and conditions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="background:var(--gray-light)">
+  <div class="section fade-in">
+    <div class="section-label">Campus Life</div>
+    <h2 class="section-title">Photo Gallery</h2>
+    <div class="divider"></div>
+    <div class="gallery-grid">
+      <div class="gallery-item wide" style="background:linear-gradient(135deg,#0A2463,#1B4FD8)">🏫<div class="gallery-overlay"><span>Main School Building</span></div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#1E8449,#27AE60)">🧪<div class="gallery-overlay"><span>Science Laboratory</span></div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#7D3C98,#9B59B6)">💻<div class="gallery-overlay"><span>Computer Lab</span></div></div>
+      <div class="gallery-item tall" style="background:linear-gradient(135deg,#C0392B,#E74C3C)">⚽<div class="gallery-overlay"><span>Sports Field</span></div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#D68910,#F39C12)">📚<div class="gallery-overlay"><span>School Library</span></div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#117A65,#1ABC9C)">🎓<div class="gallery-overlay"><span>Graduation Ceremony</span></div></div>
+      <div class="gallery-item wide" style="background:linear-gradient(135deg,#1A5276,#2980B9)">🏆<div class="gallery-overlay"><span>Prize-Giving Day 2024</span></div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#2C3E50,#566573)">🎨<div class="gallery-overlay"><span>Art Exhibition</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="section fade-in">
+    <div class="section-label">Latest Updates</div>
+    <h2 class="section-title">News & Events</h2>
+    <div class="divider"></div>
+    <div class="news-grid">
+      <div>
+        <div class="card news-main">
+          <div class="card-header" style="background:linear-gradient(135deg,#0A2463,#1B4FD8);color:#fff;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:24px">
+            <span class="card-tag">Announcement</span>
+            <h3 style="font-family:'Playfair Display',serif;font-size:24px;color:#fff;margin-bottom:8px">2025/2026 Admission List Now Published</h3>
+            <p style="font-size:13px;color:rgba(255,255,255,.8)">Successful candidates should check the portal or visit the school office</p>
+          </div>
+          <div class="card-body">
+            <div class="news-date">📅 May 20, 2026</div>
+            <p style="font-size:14px;color:var(--gray);line-height:1.7">The Management of DARUL HIKMA INTERNATIONAL COLLEGE is pleased to announce that the admission list for the 2025/2026 academic session has been published. All shortlisted candidates are required to complete enrolment by June 15, 2026. Late registration will attract an additional fee.</p>
+            <a href="#" class="btn btn-blue" style="margin-top:16px">Read More →</a>
+          </div>
+        </div>
+      </div>
+      <div class="news-sidebar">
+        <div class="news-mini">
+          <div class="news-mini-img">🏆</div>
+          <div><div class="news-date">May 15, 2026</div><h4>DHIC Wins Zamfara State Inter-School Debate Championship 2026</h4><span>Awards & Recognition</span></div>
+        </div>
+        <div class="news-mini">
+          <div class="news-mini-img" style="background:linear-gradient(135deg,#1E8449,#27AE60)">📊</div>
+          <div><div class="news-date">May 10, 2026</div><h4>WAEC 2025 Results: 98.3% of DHIC students obtained 5 credits including English & Math</h4><span>Academic</span></div>
+        </div>
+        <div class="news-mini">
+          <div class="news-mini-img" style="background:linear-gradient(135deg,#D68910,#F39C12)">🎓</div>
+          <div><div class="news-date">Apr 28, 2026</div><h4>Annual Prize-Giving Day & Valedictory Service scheduled for June 28, 2026</h4><span>Events</span></div>
+        </div>
+        <div class="news-mini">
+          <div class="news-mini-img" style="background:linear-gradient(135deg,#7D3C98,#9B59B6)">💻</div>
+          <div><div class="news-date">Apr 20, 2026</div><h4>New Computer Laboratory with 80 desktops officially commissioned by the State Governor</h4><span>Infrastructure</span></div>
+        </div>
+        <div class="news-mini">
+          <div class="news-mini-img" style="background:linear-gradient(135deg,#C0392B,#E74C3C)">⚽</div>
+          <div><div class="news-date">Apr 12, 2026</div><h4>DHIC Football team qualifies for the National Schools Games representing Zamfara State</h4><span>Sports</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT PORTAL -->
+<section id="portal" style="background:var(--gray-light)">
+  <div class="section fade-in">
+    <div class="portal-grid">
+      <div>
+        <div class="section-label">Student Access</div>
+        <h2 class="section-title">Student Portal</h2>
+        <div class="divider"></div>
+        <p style="color:var(--gray);line-height:1.7;margin-bottom:24px">Access your academic information, results, assignments, and timetable securely from any device — anytime, anywhere.</p>
+        <div class="portal-features">
+          <div class="portal-feature"><div class="portal-icon">📊</div><div><h4>View Results</h4><p>Check terminal and mock examination results instantly</p></div></div>
+          <div class="portal-feature"><div class="portal-icon">📅</div><div><h4>Class Timetable</h4><p>Access your weekly subject schedule</p></div></div>
+          <div class="portal-feature"><div class="portal-icon">📥</div><div><h4>Assignments</h4><p>Download and submit assignments online</p></div></div>
+          <div class="portal-feature"><div class="portal-icon">💳</div><div><h4>Fee Payment</h4><p>View and pay school fees online securely</p></div></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>🎓 Student Login</h3>
+        <div class="form-group">
+          <label>Student ID / Registration Number</label>
+          <input type="text" placeholder="e.g. DHIC/2024/0042">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" placeholder="Enter your password">
+        </div>
+        <div class="form-group">
+          <label>Class / Session</label>
+          <select>
+            <option>SS3 — 2025/2026</option>
+            <option>SS2 — 2025/2026</option>
+            <option>SS1 — 2025/2026</option>
+            <option>JS3 — 2025/2026</option>
+            <option>JS2 — 2025/2026</option>
+            <option>JS1 — 2025/2026</option>
+          </select>
+        </div>
+        <button class="btn btn-blue" style="width:100%;justify-content:center" onclick="portalLogin()">Login to Portal →</button>
+        <div style="display:flex;justify-content:space-between;margin-top:12px">
+          <a href="#" style="font-size:13px;color:var(--blue-light)">Forgot password?</a>
+          <a href="#" style="font-size:13px;color:var(--blue-light)">Parent Login</a>
+        </div>
+        <div style="margin-top:20px;padding:16px;background:var(--gray-light);border-radius:8px;font-size:13px;color:var(--gray);text-align:center">
+          🔒 Secured by 256-bit SSL encryption. Your data is safe.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section fade-in">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Contact Us</h2>
+    <div class="divider"></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div><h4>School Address</h4><p>DARUL HIKMA INTERNATIONAL COLLEGE, Along Zaria–Gusau Road,<br>Tsafe, Zamfara State, Nigeria</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div><h4>Phone Numbers</h4><p>+234 803 456 7890 (Office)<br>+234 815 234 5678 (Admissions)</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div><h4>Email Addresses</h4><p>info@darulhikma.edu.ng<br>admissions@darulhikma.edu.ng</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div><h4>Office Hours</h4><p>Monday – Friday: 8:00 AM – 4:00 PM<br>Saturday: 9:00 AM – 1:00 PM (Admissions only)</p></div>
+        </div>
+        <div>
+          <h4 style="font-size:14px;font-weight:600;color:var(--blue);margin-bottom:12px">Follow Us</h4>
+          <div class="social-links">
+            <a class="social-btn" href="#">📘</a>
+            <a class="social-btn" href="#">📸</a>
+            <a class="social-btn" href="#">🐦</a>
+            <a class="social-btn" href="#">▶️</a>
+            <a class="social-btn" href="#">💼</a>
+          </div>
+        </div>
+        <div class="map-placeholder">📍 Tsafe, Zamfara State — Along Zaria–Gusau Road</div>
+      </div>
+      <div class="form-card">
+        <h3>Send Us a Message</h3>
+        <div class="form-row">
+          <div class="form-group"><label>Your Name *</label><input type="text" placeholder="Full name"></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="08012345678"></div>
+        </div>
+        <div class="form-group"><label>Email Address *</label><input type="email" placeholder="your@email.com"></div>
+        <div class="form-group"><label>Subject *</label>
+          <select><option value="">Select subject</option><option>Admission Enquiry</option><option>Fees & Payment</option><option>Student Result</option><option>General Enquiry</option><option>Complaint</option><option>Partnership</option></select>
+        </div>
+        <div class="form-group"><label>Message *</label><textarea placeholder="Type your message here..." style="min-height:120px"></textarea></div>
+        <button class="btn btn-blue" style="width:100%;justify-content:center" onclick="sendMessage()">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#home">
+          <div class="logo-mark"></div>
+          <div class="logo-text footer-brand"><strong>DARUL HIKMA INTERNATIONAL COLLEGE</strong><span>Knowledge · Faith · Excellence</span></div>
+        </a>
+        <p>Providing quality Islamic and secular education, shaping scholars and leaders for Nigeria and the world. A school where every child's potential is recognized, nurtured, and celebrated.</p>
+        <div class="social-links" style="margin-top:16px">
+          <a class="social-btn" href="#">📘</a>
+          <a class="social-btn" href="#">📸</a>
+          <a class="social-btn" href="#">🐦</a>
+          <a class="social-btn" href="#">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#staff">Our Staff</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#portal">Student Portal</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#news">News & Events</a></li>
+          <li><a href="#">Download Forms</a></li>
+          <li><a href="#">Academic Calendar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">📍 Tsafe, Zamfara State</a></li>
+          <li><a href="#">📞 +234 803 456 7890</a></li>
+          <li><a href="#">✉️ info@darulhikma.edu.ng</a></li>
+          <li><a href="#contact">Contact Form</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Darul Hikma International College. All rights reserved.</p>
+      <p>Built with ❤️ for Nigerian Education</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Theme Toggle
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.querySelector('.theme-toggle').textContent = isDark ? '🌙' : '☀️';
+}
+
+// Mobile Menu
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// Subject Tabs
+function showTab(name) {
+  ['sciences','arts','commercial','junior'].forEach(t => {
+    document.getElementById('tab-'+t).style.display = 'none';
+  });
+  document.getElementById('tab-'+name).style.display = 'grid';
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// Scroll nav highlight
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  links.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#'+current) a.classList.add('active');
+  });
+});
+
+// Fade-in on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Form handlers
+function submitForm() {
+  alert('✅ Application submitted successfully!\n\nYou will receive a confirmation message within 24 hours. Entrance exam date will be communicated via SMS/email.');
+}
+function portalLogin() {
+  const id = document.querySelector('#portal input[type=text]').value;
+  if (!id) { alert('Please enter your Student ID'); return; }
+  alert('🔐 Connecting to secure portal...\n\nNote: This is a demo website. A full implementation would connect to a school management database.');
+}
+function sendMessage() {
+  alert('✅ Message sent successfully!\n\nOur team will respond within 1-2 business days. Thank you for contacting DARUL HIKMA INTERNATIONAL COLLEGE.');
+}
+
+// Active nav on load
+document.querySelector('.nav-links a').classList.add('active');
+</script>
+</body>
+</html>
